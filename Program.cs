@@ -1,4 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<MicroUrlContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MicroUrlContext") ?? throw new InvalidOperationException("Connection string 'MicroUrlContext' not found.")));
 
 // Add services to the container.
 

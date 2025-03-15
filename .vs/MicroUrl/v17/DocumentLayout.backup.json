@@ -1,12 +1,122 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\dev\\projetos\\microurl\\MicroUrl\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\dev\\projetos\\MicroUrl\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|c:\\dev\\projetos\\microurl\\src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|c:\\dev\\projetos\\microurl\\src\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|c:\\dev\\projetos\\microurl\\src\\project\\infrastructure\\data\\microurlcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|solutionrelative:project\\infrastructure\\data\\microurlcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|c:\\dev\\projetos\\microurl\\src\\project\\ui\\controller\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|solutionrelative:project\\ui\\controller\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|c:\\dev\\projetos\\microurl\\src\\project\\domain\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|solutionrelative:project\\domain\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|c:\\dev\\projetos\\microurl\\src\\project\\domain\\url.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B42C3F7-CCAC-498C-BA8C-8C41DB6C1564}|MicroUrl.csproj|solutionrelative:project\\domain\\url.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\dev\\projetos\\MicroUrl\\src\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\dev\\projetos\\MicroUrl\\src\\appsettings.json*",
+              "RelativeToolTip": "appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-15T11:06:07.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MicroUrlContext.cs",
+              "DocumentMoniker": "C:\\dev\\projetos\\MicroUrl\\src\\Project\\Infrastructure\\Data\\MicroUrlContext.cs",
+              "RelativeDocumentMoniker": "Project\\Infrastructure\\Data\\MicroUrlContext.cs",
+              "ToolTip": "C:\\dev\\projetos\\MicroUrl\\src\\Project\\Infrastructure\\Data\\MicroUrlContext.cs*",
+              "RelativeToolTip": "Project\\Infrastructure\\Data\\MicroUrlContext.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T11:02:40.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\dev\\projetos\\microurl\\src\\Project\\UI\\Controller\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "Project\\UI\\Controller\\UsuariosController.cs",
+              "ToolTip": "C:\\dev\\projetos\\microurl\\src\\Project\\UI\\Controller\\UsuariosController.cs*",
+              "RelativeToolTip": "Project\\UI\\Controller\\UsuariosController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T11:00:15.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Url.cs",
+              "DocumentMoniker": "C:\\dev\\projetos\\MicroUrl\\src\\Project\\Domain\\Url.cs",
+              "RelativeDocumentMoniker": "Project\\Domain\\Url.cs",
+              "ToolTip": "C:\\dev\\projetos\\MicroUrl\\src\\Project\\Domain\\Url.cs",
+              "RelativeToolTip": "Project\\Domain\\Url.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T02:14:43.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\dev\\projetos\\MicroUrl\\src\\Project\\Domain\\Usuario.cs",
+              "RelativeDocumentMoniker": "Project\\Domain\\Usuario.cs",
+              "ToolTip": "C:\\dev\\projetos\\MicroUrl\\src\\Project\\Domain\\Usuario.cs",
+              "RelativeToolTip": "Project\\Domain\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T02:04:04.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\dev\\projetos\\MicroUrl\\src\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\dev\\projetos\\MicroUrl\\src\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T20:10:24.965Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

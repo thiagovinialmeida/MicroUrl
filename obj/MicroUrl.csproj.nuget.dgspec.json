@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\projetos\\MicroUrl\\MicroUrl\\MicroUrl.csproj": {}
+    "C:\\dev\\projetos\\microurl\\src\\MicroUrl.csproj": {}
   },
   "projects": {
-    "C:\\dev\\projetos\\MicroUrl\\MicroUrl\\MicroUrl.csproj": {
+    "C:\\dev\\projetos\\microurl\\src\\MicroUrl.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\projetos\\MicroUrl\\MicroUrl\\MicroUrl.csproj",
+        "projectUniqueName": "C:\\dev\\projetos\\microurl\\src\\MicroUrl.csproj",
         "projectName": "MicroUrl",
-        "projectPath": "C:\\dev\\projetos\\MicroUrl\\MicroUrl\\MicroUrl.csproj",
+        "projectPath": "C:\\dev\\projetos\\microurl\\src\\MicroUrl.csproj",
         "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\projetos\\MicroUrl\\MicroUrl\\obj\\",
+        "outputPath": "C:\\dev\\projetos\\microurl\\src\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,20 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"

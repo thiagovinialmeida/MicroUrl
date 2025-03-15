@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MicroUrl")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+afae665b9065288061a67814ef905a830d0b3e41")]
 [assembly: System.Reflection.AssemblyProductAttribute("MicroUrl")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MicroUrl")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
