@@ -1,8 +1,11 @@
-﻿package com.mu.MicroUrl.Infrastructure;
+package com.mu.MicroUrl.Infrastructure;
 
 import com.mu.MicroUrl.Domain.Url;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface UrlRepository extends JpaRepository<Url, UUID>{ }
+public interface UrlRepository extends JpaRepository<Url, UUID>{
+    Url findUrlByShortUrl(String ShortUrl);
+    Url findUrlByOriginalUrl(String OriginalUrl);
+}

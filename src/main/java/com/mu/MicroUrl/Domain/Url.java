@@ -21,7 +21,7 @@ public class Url {
     @Id
     @GeneratedValue
     private UUID Id;
-    private String ShortUrl;
-    private String OriginalUrl;
+    private String shortUrl;
+    private String originalUrl;
     private int Clicks;
 }
