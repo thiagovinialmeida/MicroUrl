@@ -63,8 +63,8 @@ public class UrlService {
         headers.setLocation(URI.create(url.getOriginalUrl()));
         return headers;
     }
-    public void DeleteUrl(UUID id) {
-        urlRepository.delete(findByUrl(id));
+    public void DeleteUrl(String data) {
+        urlRepository.delete(urlRepository.findUrlByShortUrl(data));
     }
 
     private String toSha256(String originalUrl) {

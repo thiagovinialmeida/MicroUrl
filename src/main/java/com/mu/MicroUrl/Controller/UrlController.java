@@ -39,9 +39,9 @@ public class UrlController {
         return urlService.getShortUrl(url, servletRequest);
     }
 
-    @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> deleteUrl(@PathVariable UUID id) {
-        urlService.DeleteUrl(id);
+    @DeleteMapping(value = "/{url}")
+    public ResponseEntity<Void> deleteUrl(@PathVariable String url) {
+        urlService.DeleteUrl(url);
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
 }
