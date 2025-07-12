@@ -24,9 +24,9 @@ public class UrlController {
         return urlService.getAllUrls();
     }
 
-    @GetMapping(value = "origin/{id}")
-    public ResponseEntity<UrlDTO> getUrlById(@PathVariable UUID id) {
-        return ResponseEntity.ok(urlService.getUrlById(id));
+    @GetMapping(value = "info/{url}")
+    public ResponseEntity<UrlDTO> getUrlByUrl (@PathVariable String url) {
+        return ResponseEntity.ok(urlService.getUrlByUrl(url));
     }
 
     @GetMapping(value = "/{id}")

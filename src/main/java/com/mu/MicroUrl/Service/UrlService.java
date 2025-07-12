@@ -50,8 +50,8 @@ public class UrlService {
         }
         return ResponseEntity.ok(respUrl);
     }
-    public UrlDTO getUrlById(UUID id){
-        Url url = findById(id);
+    public UrlDTO getUrlByUrl(String data){
+        Url url = urlRepository.findUrlByShortUrl(data);
         return new UrlDTO(url.getShortUrl(), url.getOriginalUrl(), url.getClicks());
     }
     public HttpHeaders redirect(String shortenUrl) {
@@ -64,7 +64,7 @@ public class UrlService {
         return headers;
     }
     public void DeleteUrl(UUID id) {
-        urlRepository.delete(findById(id));
+        urlRepository.delete(findByUrl(id));
     }
 
     private String toSha256(String originalUrl) {
@@ -84,7 +84,7 @@ public class UrlService {
             throw new RuntimeException("Error generating short URL: " + e.getMessage());
         }
     }
-    private Url findById(UUID id) {
+    private Url findByUrl(UUID id) {
         return urlRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("URL not found with id: " + id));
     }
