@@ -2,7 +2,6 @@ package com.mu.MicroUrl.Controller;
 
 import com.mu.MicroUrl.DTO.RequestDTO;
 import com.mu.MicroUrl.DTO.UrlDTO;
-import com.mu.MicroUrl.Domain.Url;
 import com.mu.MicroUrl.Service.UrlService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +20,8 @@ public class UrlController {
     private UrlService urlService;
 
     @GetMapping
-    public ResponseEntity<List<Url>> getAllUrls() {
-        return ResponseEntity.ok(urlService.getAllUrls());
+    public ResponseEntity<List<UrlDTO>> getAllUrls() {
+        return urlService.getAllUrls();
     }
 
     @GetMapping(value = "origin/{id}")

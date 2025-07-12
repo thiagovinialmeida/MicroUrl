@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -41,8 +42,13 @@ public class UrlService {
                     .toString() + "/" + shortUrl.substring(0,10)));
         }
     }
-    public List<Url> getAllUrls() {
-        return urlRepository.findAll();
+    public ResponseEntity<List<UrlDTO>> getAllUrls() {
+        List<UrlDTO> respUrl = new ArrayList<>();
+        for(var url : urlRepository.findAll()) {
+            UrlDTO dto = new UrlDTO(url.getShortUrl(), url.getOriginalUrl(), url.getClicks());
+            respUrl.add(dto);
+        }
+        return ResponseEntity.ok(respUrl);
     }
     public UrlDTO getUrlById(UUID id){
         Url url = findById(id);
