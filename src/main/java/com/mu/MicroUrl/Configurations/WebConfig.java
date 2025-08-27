@@ -1,4 +1,4 @@
-﻿package com.mu.MicroUrl.Configurations;
+package com.mu.MicroUrl.Configurations;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
