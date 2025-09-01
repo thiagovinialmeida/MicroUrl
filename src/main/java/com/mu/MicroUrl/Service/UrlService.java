@@ -1,11 +1,13 @@
 package com.mu.MicroUrl.Service;
 
 import com.mu.MicroUrl.DTO.RequestDTO;
+import com.mu.MicroUrl.DTO.ShortedUrlInfo;
 import com.mu.MicroUrl.DTO.UrlDTO;
 import com.mu.MicroUrl.Domain.Url;
 import com.mu.MicroUrl.Infrastructure.UrlRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,9 @@ import java.util.UUID;
 public class UrlService {
     @Autowired
     private UrlRepository urlRepository;
+
+    @Value("${app.domain}")
+    private String domain;
 
     public ResponseEntity<RequestDTO> getShortUrl(RequestDTO originalUrl, HttpServletRequest servletRequest) {
         if(originalUrl.requestUrl().isEmpty()) {
@@ -50,9 +55,10 @@ public class UrlService {
         }
         return ResponseEntity.ok(respUrl);
     }
-    public UrlDTO getUrlByUrl(String data){
-        Url url = urlRepository.findUrlByShortUrl(data);
-        return new UrlDTO(url.getShortUrl(), url.getOriginalUrl(), url.getClicks());
+    public UrlDTO getUrlByUrl(ShortedUrlInfo data){
+        List<String> parts = List.of(data.url().split("/"));
+        Url url = urlRepository.findUrlByShortUrl(parts.getLast());
+        return new UrlDTO(domain + "/url/" + url.getShortUrl(), url.getOriginalUrl(), url.getClicks());
     }
     public HttpHeaders redirect(String shortenUrl) {
         Url url = urlRepository.findUrlByShortUrl(shortenUrl);

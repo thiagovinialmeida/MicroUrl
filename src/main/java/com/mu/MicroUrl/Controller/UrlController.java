@@ -1,6 +1,7 @@
 package com.mu.MicroUrl.Controller;
 
 import com.mu.MicroUrl.DTO.RequestDTO;
+import com.mu.MicroUrl.DTO.ShortedUrlInfo;
 import com.mu.MicroUrl.DTO.UrlDTO;
 import com.mu.MicroUrl.Service.UrlService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/url")
@@ -24,8 +24,8 @@ public class UrlController {
         return urlService.getAllUrls();
     }
 
-    @GetMapping(value = "info/{url}")
-    public ResponseEntity<UrlDTO> getUrlByUrl (@PathVariable String url) {
+    @GetMapping(value = "/info")
+    public ResponseEntity<UrlDTO> getUrlByUrl (@RequestBody ShortedUrlInfo url) {
         return ResponseEntity.ok(urlService.getUrlByUrl(url));
     }
 
