@@ -29,17 +29,28 @@ public class UrlService {
     private String domain;
 
     public ResponseEntity<RequestDTO> getShortUrl(RequestDTO originalUrl, HttpServletRequest servletRequest) {
+        Url url = new Url();
+        String shortUrl;
+        String validatedUrl;
+
+        if(!splitUrl(originalUrl.requestUrl()).getFirst().equals("https:")){
+            validatedUrl = "https://" + originalUrl.requestUrl();
+            shortUrl = toSha256("https://" + originalUrl.requestUrl());
+        } else {
+            validatedUrl = originalUrl.requestUrl();
+            shortUrl = toSha256(originalUrl.requestUrl());
+        }
+
         if(originalUrl.requestUrl().isEmpty()) {
             return ResponseEntity.badRequest().build();
-        } else if(urlRepository.findUrlByOriginalUrl(originalUrl.requestUrl()) != null) {
+        } else if(urlRepository.findUrlByOriginalUrl(validatedUrl) != null ||
+                urlRepository.findUrlByOriginalUrl(validatedUrl) != null) {
                 return ResponseEntity.status(HttpStatus.CONFLICT)
                         .body(new RequestDTO("This URL has already been shortened: "
                                 + originalUrl.requestUrl()));
         } else {
-            Url url = new Url();
-            String shortUrl = toSha256(originalUrl.requestUrl());
             url.setShortUrl(shortUrl.substring(0,10));
-            url.setOriginalUrl(originalUrl.requestUrl());
+            url.setOriginalUrl(validatedUrl);
             url.setClicks(0);
             urlRepository.save(url);
             return ResponseEntity.status(HttpStatus.CREATED).body(new RequestDTO(servletRequest
@@ -50,13 +61,13 @@ public class UrlService {
     public ResponseEntity<List<UrlDTO>> getAllUrls() {
         List<UrlDTO> respUrl = new ArrayList<>();
         for(var url : urlRepository.findAll()) {
-            UrlDTO dto = new UrlDTO(url.getShortUrl(), url.getOriginalUrl(), url.getClicks());
+            UrlDTO dto = new UrlDTO(domain + "/url/" + url.getShortUrl(), url.getOriginalUrl(), url.getClicks());
             respUrl.add(dto);
         }
         return ResponseEntity.ok(respUrl);
     }
     public UrlDTO getUrlByUrl(ShortedUrlInfo data){
-        List<String> parts = List.of(data.url().split("/"));
+        List<String> parts = splitUrl(data.url());
         Url url = urlRepository.findUrlByShortUrl(parts.getLast());
         return new UrlDTO(domain + "/url/" + url.getShortUrl(), url.getOriginalUrl(), url.getClicks());
     }
@@ -93,5 +104,8 @@ public class UrlService {
     private Url findByUrl(UUID id) {
         return urlRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("URL not found with id: " + id));
+    }
+    private List<String> splitUrl(String url) {
+        return List.of(url.split("/"));
     }
 }
