@@ -67,8 +67,7 @@ public class UrlService {
         return ResponseEntity.ok(respUrl);
     }
     public UrlDTO getUrlByUrl(ShortedUrlInfo data){
-        List<String> parts = splitUrl(data.url());
-        Url url = urlRepository.findUrlByShortUrl(parts.getLast());
+        Url url = urlRepository.findUrlByShortUrl(splitUrl(data.url()).getLast());
         return new UrlDTO(domain + "/url/" + url.getShortUrl(), url.getOriginalUrl(), url.getClicks());
     }
     public HttpHeaders redirect(String shortenUrl) {
@@ -80,8 +79,15 @@ public class UrlService {
         headers.setLocation(URI.create(url.getOriginalUrl()));
         return headers;
     }
-    public void DeleteUrl(String data) {
-        urlRepository.delete(urlRepository.findUrlByShortUrl(data));
+    public ResponseEntity<RequestDTO> DeleteUrl(ShortedUrlInfo data) {
+        try{
+            urlRepository.delete(urlRepository.findUrlByShortUrl(splitUrl(data.url()).getLast()));
+            return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+        } catch(Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new RequestDTO("This URL don't exist: "
+                            + data.url()));
+        }
     }
 
     private String toSha256(String originalUrl) {
