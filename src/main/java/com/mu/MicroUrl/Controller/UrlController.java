@@ -24,7 +24,7 @@ public class UrlController {
         return urlService.getAllUrls();
     }
 
-    @GetMapping(value = "/info")
+    @PutMapping(value = "/info")
     public ResponseEntity<UrlDTO> getUrlByUrl (@RequestBody ShortedUrlInfo url) {
         return ResponseEntity.ok(urlService.getUrlByUrl(url));
     }
